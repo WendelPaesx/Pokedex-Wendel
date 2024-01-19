@@ -7,20 +7,23 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
 
-export default function PokemonCard() {
+
+export default function PokemonCard({name,  imageUrl}) {
+  
   
   return (
     
     <Card sx={{ maxWidth: 380 }}>
       <CardMedia
+       
         component="img"
-        alt="Pikachu"
+        alt={name}
         height="240"
-        image="https://github.com/wendelpaesx.png"
+        image = ''
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          pikachu
+          <h2>{name}</h2>
         </Typography>
         
       </CardContent>

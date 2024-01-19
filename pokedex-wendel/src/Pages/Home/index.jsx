@@ -1,30 +1,23 @@
 import React from "react";
-import { useState, useEffect } from "react";
 import { Container, Grid } from "@mui/material";
 import PokemonCard from "../../Componentes/PokemonCard";
 import Page from "../../Componentes/Page";
-import axios from "axios";
+import usePokemonService from "../../services";
 
 export default function Home() {
-  const [pokemons, setPokemons] = useState([]);
+  const {pokemons } = usePokemonService();
 
-  useEffect(() => {
-    PegarPokemon();
-  });
+  
 
-  const PegarPokemon = () => {
-    axios
-      .get("https://pokeapi.co/api/v2/pokemon?limit=100&offset=0")
-      .then((res) => setPokemons(res.data.results))
-      .catch((err) => console.log(err));
-  };
+ 
   return (
     <Page>
       
-        <Grid container>
+        <Grid container spacing={2}>
           {pokemons.map((pokemon) => (
-            <Grid item xs={4}>
-              <PokemonCard />
+            <Grid item xs={3} key ={pokemon.name}  >
+
+              <PokemonCard name={pokemon.name}  />
             </Grid>
           ))}
         </Grid>
