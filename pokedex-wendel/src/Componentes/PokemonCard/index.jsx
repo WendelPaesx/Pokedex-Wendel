@@ -6,14 +6,17 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
+
 export default function PokemonCard() {
+  
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    
+    <Card sx={{ maxWidth: 380 }}>
       <CardMedia
         component="img"
-        alt="green iguana"
-        height="140"
-        image="/static/images/cards/contemplative-reptile.jpg"
+        alt="Pikachu"
+        height="240"
+        image="https://github.com/wendelpaesx.png"
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">

@@ -1,16 +1,11 @@
 
 import './App.css';
-import Home from './Componentes/Home';
+import Router from './router';
 
 
 function App() {
   return (
-    <div>
-      <Home/>
-     
-    
-    </div>
-   
+    <Router/>
     
     
   );
