@@ -78,7 +78,7 @@ export  function NavBar() {
               
             </SearchIconWrapper>
             <StyledInputBase
-              placeholder="Search…"
+              placeholder="Procure aqui"
               inputProps={{ 'aria-label': 'search' }}
             />
           </Search>
