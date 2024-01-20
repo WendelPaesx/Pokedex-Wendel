@@ -7,7 +7,7 @@ const usePokemonService = () => {
   useEffect(() => {
     const fetchPokemons = async () => {
       try {
-        const response = await axios.get('https://pokeapi.co/api/v2/pokemon?limit=100&offset=0');
+        const response = await axios.get('https://pokeapi.co/api/v2/pokemon?limit=806&offset=0');
         setPokemons(response.data.results);
       } catch (error) {
         console.error(error);

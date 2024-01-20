@@ -8,8 +8,11 @@ import Typography from '@mui/material/Typography';
 
 
 
-export default function PokemonCard({name,  imageUrl}) {
+
+export default function PokemonCard({name, pokemonId}) {
+  const formattedPokemonId = String(pokemonId).padStart(3, '0');
   
+  const imagemPokemon =`img/png/${formattedPokemonId}.png`;
   
   return (
     
@@ -17,9 +20,9 @@ export default function PokemonCard({name,  imageUrl}) {
       <CardMedia
        
         component="img"
-        alt={name}
+        alt={` ${formattedPokemonId}`}
         height="240"
-        image = ''
+        image = {imagemPokemon}
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
