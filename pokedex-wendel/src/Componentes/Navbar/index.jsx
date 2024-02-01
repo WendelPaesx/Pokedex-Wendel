@@ -40,7 +40,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export function NavBar() {
-  const [searchTerm, setSearchTerm] = React.useState('');
+  const [searchTerm, setSearchTerm] = React.useState("");
   const [pokemonsData, setPokemonsData] = React.useState([]);
 
   const handleSearchChange = async (evento) => {
@@ -50,45 +50,54 @@ export function NavBar() {
     try {
       if (query) {
         // Fazer a requisição à API para obter a lista de pokémons
-        const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${query.toLowerCase()}/`);
+        const response = await axios.get(
+          `https://pokeapi.co/api/v2/pokemon/${query.toLowerCase()}/`
+        );
         setPokemonsData([response.data]);
       } else {
         setPokemonsData([]);
       }
     } catch (error) {
-      console.error('Erro ao obter a lista de pokémons:', error);
+      console.error("Erro ao obter a lista de pokémons:", error);
       setPokemonsData([]);
     }
   };
 
   return (
-    <Box sx={{ flexGrow: 1, marginBottom: "2em" }}>
-      <AppBar position="static">
+    <Box sx={{ flexGrow: 1, marginBottom: "8em" }}>
+      <AppBar position="fixed" sx={{ backgroundColor: "rgba(0 , 0 , 0 , 0.8)" }}>
         <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="open drawer"
-            sx={{ mr: 2 }}
-          ></IconButton>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
-          >
-            <h2>Pokedex</h2>
-            <p>tenha os nomes dos pokémons na palma de sua mão!</p>
-          </Typography>
-          <Search>
-            <StyledInputBase
-              placeholder="Procure aqui"
-              inputProps={{ "aria-label": "search" }}
-              value={searchTerm}
-              onChange={handleSearchChange}
+          
+            <Box
+              component="img"
+              src="img/png/pokemon-logo-black-transparent.png"
+              width="150px"
+              height="auto"
             />
-          </Search>
+            <IconButton
+              size="large"
+              edge="start"
+              color="inherit"
+              aria-label="open drawer"
+              sx={{ mr: 2 }}
+            ></IconButton>
+            <Typography
+              variant="h6"
+              noWrap
+              component="div"
+              sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
+            >
+              <p>Tenha os pokemons na palma de sua mão!</p>
+            </Typography>
+            <Search>
+              <StyledInputBase
+                placeholder="Search"
+                inputProps={{ "aria-label": "search" }}
+                value={searchTerm}
+                onChange={handleSearchChange}
+              />
+            </Search>
+          
         </Toolbar>
       </AppBar>
       <ul>
@@ -100,4 +109,3 @@ export function NavBar() {
   );
 }
 export default NavBar;
-  
