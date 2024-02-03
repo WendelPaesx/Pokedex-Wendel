@@ -101,8 +101,8 @@ export function NavBar() {
         </Toolbar>
       </AppBar>
       <ul>
-        {pokemonsData.map((pokemon, index) => (
-          <li key={index}>{pokemon.name}</li>
+        {pokemonsData.map((pokemon, i) => (
+          <li key={i}>{pokemon.name}</li>
         ))}
       </ul>
     </Box>

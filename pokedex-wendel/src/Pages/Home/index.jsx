@@ -13,11 +13,11 @@ export default function Home() {
   return (
     <Page>
       
-        <Grid container spacing={2}>
+        <Grid container spacing={2} >
           {pokemons.map((pokemon, index) => (
             <Grid item xs={3} key ={pokemon.name}  >
 
-              <PokemonCard pokemonId={index + 1} name={pokemon.name}  />
+              <PokemonCard  pokemonId={index + 1} name={pokemon.name}   />
             </Grid>
           ))}
         </Grid>
