@@ -19,6 +19,7 @@ export default function Home() {
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = Math.min(startIndex + itemsPerPage, pokemons.length);
   const pokemonsForPage = pokemons.slice(startIndex, endIndex);
+  
 
   return (
     <Page >
@@ -33,7 +34,9 @@ export default function Home() {
         currentPage={currentPage}
         totalPages={Math.ceil(pokemons.length / itemsPerPage)}
         onPageChange={handlePageChange}
+        
       />
     </Page>
+   
   );
 }

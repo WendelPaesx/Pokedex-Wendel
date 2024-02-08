@@ -71,7 +71,7 @@ export function NavBar() {
             <Box
               component="img"
               src="img/png/pokemon-logo-black-transparent.png"
-              width="150px"
+              width="100px"
               height="auto"
             />
             <IconButton
