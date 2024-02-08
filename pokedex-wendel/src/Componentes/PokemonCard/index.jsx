@@ -6,9 +6,8 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 
-export default function PokemonCard({ name, pokemonId }) {
+const PokemonCard = ({ name, pokemonId }) => {
   const formattedPokemonId = String(pokemonId).padStart(3, "0");
-
   const imagemPokemon = `img/png/${formattedPokemonId}.png`;
   const capitalizedFirstName = name.charAt(0).toUpperCase() + name.slice(1);
 
@@ -46,3 +45,4 @@ export default function PokemonCard({ name, pokemonId }) {
     </Card>
   );
 }
+export default PokemonCard;
